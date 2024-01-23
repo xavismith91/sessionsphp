@@ -1,7 +1,14 @@
 <?php  
     session_start();
     session_destroy();
-    header("location: index.php");
+    
+    $varsesion = $_SESSION['usuario'];
+    if ($varsesion == null || $varsesion = '') {
+        echo'No tienes acceso a esta sección';   
+        die();
+    }
+
+    session_destroy();
+    header('Location:index.php');
+
 ?>
-
-
